@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강소연 그로스마케터 CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-dark: #0b2545; /* 사이드바 배경 */
+      --accent-blue: #1e3a8a;  /* 포인트 블루 */
+      --light-gray: #f4f6f9;
+      --text-dark: #2c3e50;
+      --text-light: #ffffff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden; /* 가로 스크롤 방지 */
+    }
+
+    .cv-container {
+      display: flex;
+      width: 100%;         /* 모바일 축소 방지: 기본은 100% */
+      max-width: 1100px;   /* 데스크탑에서만 최대 1100px */
+      background: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* --- Sidebar --- */
+    .sidebar {
+      width: 32%;
+      background: var(--primary-dark);
+      color: var(--text-light);
+      padding: 2rem;
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--light-gray);
+      margin: 0 auto 2rem;
+      display: block;
+      object-fit: cover;
+    }
+
+    .sidebar h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar li i {
+      margin-right: 10px;
+      color: var(--light-gray);
+    }
+
+    /* --- Education --- */
+    .education {
+      margin-top: 1rem;
+    }
+
+    .edu-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-year {
+      flex: 0 0 120px; /* 연도 고정 폭 */
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-right: 1rem;
+      color: #ffffff;
+    }
+
+    .edu-info {
+      flex: 1;
+    }
+
+    .edu-school {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: #ffffff;
+    }
+
+    .edu-degree,
+    .edu-grade {
+      font-size: 0.9rem;
+      color: #e0e6ed;
+    }
+
+    /* --- Main Content --- */
+    .main-content {
+      width: 68%;
+      padding: 5rem 2.5rem 2.5rem 2.5rem; /* 상단 여백 넉넉히 */
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .header {
+      border-bottom: 2px solid var(--light-gray);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .header .name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+    }
+
+    .header .title {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+
+    .main-content h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .main-content h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 60px;
+      height: 2px;
+      background: var(--accent-blue);
+    }
+
+    .main-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* Work Experience */
+    .work-experience .job-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-item .job-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .job-item .company {
+      font-weight: 500;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    .job-item ul {
+      list-style: disc;
+      margin: 0.5rem 0 0 1.2rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Reference */
+    .reference-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .reference {
+      flex: 1;
+      background: var(--light-gray);
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .reference .ref-name {
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-bottom: 0.3rem;
+    }
+
+    /* 반응형 */
+    @media (max-width: 992px) {
+      .cv-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+      }
+      .sidebar, .main-content {
+        width: 100%;
+      }
+      .header .name {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
+      }
+      .cv-container {
+        flex-direction: column;
+        width: 90% !important;
+        max-width: 100% !important;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .sidebar, .main-content {
+        width: 90% !important;
+        padding: 1.5rem 1rem;
+      }
+      .main-content .name {
+        font-size: 1.4rem;
+      }
+      .main-content .title {
+        font-size: 1rem;
+      }
+      .main-content p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="profile.png" alt="프로필" class="profile-photo">
+
+      <h2>CONTACT</h2>
+      <ul>
+        <li><i class="fas fa-phone"></i>010-1234-5678</li>
+        <li><i class="fas fa-envelope"></i>annie14984@gmail.com</li>
+        <li><i class="fas fa-map-marker-alt"></i>서울특별시 관악구</li>
+        <li><i class="fas fa-globe"></i>https://info9457.tistory.com/</li>
+      </ul>
+
+      <h2>EDUCATION</h2>
+      <div class="education">
+        <div class="edu-item">
+          <span class="edu-year">2025.8.5 ~ </span>
+          <div class="edu-info">
+            <div class="edu-school">그로스마케팅 부트캠프</div>
+            <div class="edu-degree">AI 마케팅 전문가</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <span class="edu-year">2017 – 2022</span>
+          <div class="edu-info">
+            <div class="edu-school">부산외국어대학교</div>
+            <div class="edu-degree">외교, 중국어학사</div>
+            <div class="edu-grade">GPA: 3.2 / 4.5</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>SKILLS</h2>
+      <ul>
+        <li>데이터 분석: SQL, Python, Looker Studio</li>
+        <li>클라우드: GCP</li>
+        <li>AI/광고: ML/DL, 광고소재</li>
+        <li>마케팅: 콘텐츠, SNS, SEO</li>
+        <li>리더십 & 커뮤니케이션</li>
+      </ul>
+
+      <h2>LANGUAGES</h2>
+      <ul>
+        <li>한국어 (원어민)</li>
+        <li>영어 (중급)</li>
+        <li>중국어 (초급)</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="header">
+        <div class="name">강소연</div>
+        <div class="title">그로스마케터</div>
+      </div>
+
+      <h2>PROFILE</h2>
+      <p>
+        서비스 현장에서 고객과 직접 소통하며 소비자 행동을 이해한 경험을 가진 마케팅 지향형 인재입니다. 카페 매니저 경험을 통해 운영 효율화와 문제 해결 능력을 길렀고, 올리브영·백화점 프로모션 경험으로 브랜드 마케팅의 현장 실행력을 강화했습니다. 앞으로는 이러한 경험을 데이터 기반 분석 역량과 결합해, 브랜드 성장과 성과 창출에 기여하고자 합니다.
+      </p>
+
+      <h2>WORK EXPERIENCE</h2>
+      <div class="work-experience">
+        <div class="job-item">
+          <div class="job-header">
+            <span>Café</span>
+            <span>2023 – 2024</span>
+          </div>
+          <div class="company">Café Manager</div>
+          <ul>
+            <li>직원 스케줄 관리 및 신입 직원 교육 담당</li>
+            <li>매출 관리 및 재고 파악을 통한 매장 운영 효율화</li>
+            <li>고객 불만 처리 및 서비스 품질 유지</li>
+          </ul>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span>Olive Young</span>
+            <span>2021 - 2022</span>
+          </div>
+          <div class="company">Olive Young Part-time Staff</div>
+          <ul>
+            <li>매장 프로모션 및 진열 관리, 상품 추천을 통한 판매 지원</li>
+            <li>POS 시스템 활용 및 재고 관리 보조</li>
+            <li>고객 니즈 파악 및 응대를 통한 서비스 경험 축적</li>
+          </ul>
+        </div>
+
+        <div class="job-item">
+          <div class="job-header">
+            <span>Department Store</span>
+            <span>2025</span>
+          </div>
+          <div class="company">Department Store Event Staff (Short-term)</div>
+          <ul>
+            <li>행사 운영 및 프로모션 지원</li>
+            <li>다양한 연령대 고객 응대를 통한 서비스 스킬 향상</li>
+            <li>팀 단위 협력으로 매출 목표 달성 기여</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <h2>REFERENCE</h2>
+      <div class="reference-list">
+        <div class="reference">
+          <div class="ref-name">김태호</div>
+          <div>워디에르(주) / CTO</div>
+          <div>전화: 010-1234-5678</div>
+          <div>Email: taehokim@example.com</div>
+        </div>
+        <div class="reference">
+          <div class="ref-name">박서연</div>
+          <div>워디에르(주) / CEO</div>
+          <div>전화: 010-5678-1234</div>
+          <div>Email: seoyeonpark@example.com</div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
